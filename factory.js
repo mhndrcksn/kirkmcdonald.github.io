@@ -119,12 +119,8 @@ Factory.prototype = {
         if (this.modules.length > factoryDef.moduleSlots) {
             this.modules.length = factoryDef.moduleSlots
         }
-        var toAdd = null
-        if (spec.defaultModule.canUse(this.recipe)) {
-            toAdd = spec.defaultModule
-        }
         while (this.modules.length < factoryDef.moduleSlots) {
-            this.modules.push(toAdd)
+            this.modules.push(spec.defaultModule)
         }
     },
     getModule: function(index) {
